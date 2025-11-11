@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #1900ff, #ffffff);
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+header, footer {
+    text-align: center;
+    background: rgba(0,0,0,0.1);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.foto {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.foto img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #333;
+}
+
+.identitas, .biodata, .hobi, .kontak {
+    background: rgba(255,255,255,0.8);
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.hobi .list-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.hobi h4 {
+    margin-bottom: 8px;
+}
+
+ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"],
+input[type="email"] {
+    padding: 8px;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #999;
+}
+
+.radio-group,
+.checkbox-group {
+    display: flex;
+    gap: 20px;
+    margin-top: 8px;
+}
+
+.radio-group label,
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ff0000;
+}
