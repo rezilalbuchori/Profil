@@ -2,70 +2,115 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, sans-serif;
 }
 
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #1900ff, #ffffff);
-    color: #333;
+    background: linear-gradient(135deg, #0e1b35, #1b4dff, #a1d8ff);
+    color: #222;
     line-height: 1.6;
     padding: 20px;
+    min-height: 100vh;
+    background-attachment: fixed;
 }
 
 header, footer {
     text-align: center;
-    background: rgba(0,0,0,0.1);
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    color: #e3f2fd;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    font-size: 1.8rem;
+    color: #aee7ff;
+    text-shadow: 0 0 8px rgba(150, 200, 255, 0.8);
 }
 
 .foto {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .foto img {
-    width: 150px;
-    height: 150px;
+    width: 160px;
+    height: 160px;
     border-radius: 50%;
-    border: 3px solid #333;
+    border: 3px solid #aee7ff;
+    box-shadow: 0 0 25px rgba(120, 200, 255, 0.6);
+    object-fit: cover;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.foto img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(150, 220, 255, 0.9);
 }
 
 .identitas, .biodata, .hobi, .kontak {
-    background: rgba(255,255,255,0.8);
-    padding: 15px;
-    border-radius: 12px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 16px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #f0f8ff;
+    transition: 0.3s;
+}
+
+.identitas:hover, .biodata:hover, .hobi:hover, .kontak:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.4);
+    border-color: rgba(170, 220, 255, 0.6);
+}
+
+.hobi h4 {
+    color: #aee7ff;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: 5px;
 }
 
 .hobi .list-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
-    gap: 20px;
-}
-
-.hobi h4 {
-    margin-bottom: 8px;
+    gap: 15px;
 }
 
 ul {
-    list-style: disc;
+    list-style: square;
     margin-left: 20px;
+    color: #d7ecff;
 }
 
 form {
     display: flex;
     flex-direction: column;
+    gap: 12px;
 }
 
 input[type="text"],
 input[type="email"] {
-    padding: 8px;
+    padding: 10px;
     width: 100%;
-    border-radius: 8px;
-    border: 1px solid #999;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.1);
+    color: #e3f2fd;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #8ee4ff;
+    outline: none;
+    box-shadow: 0 0 10px rgba(120, 200, 255, 0.6);
 }
 
 .radio-group,
@@ -73,6 +118,7 @@ input[type="email"] {
     display: flex;
     gap: 20px;
     margin-top: 8px;
+    flex-wrap: wrap;
 }
 
 .radio-group label,
@@ -80,19 +126,53 @@ input[type="email"] {
     display: flex;
     align-items: center;
     gap: 6px;
+    color: #e3f2fd;
 }
 
 button {
     margin-top: 15px;
-    padding: 10px;
-    background: #333;
-    color: #fff;
+    padding: 12px;
+    background: linear-gradient(135deg, #2196f3, #00c6ff);
+    color: white;
+    font-weight: bold;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
-    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
 }
 
 button:hover {
-    background: #ff0000;
+    background: linear-gradient(135deg, #00c6ff, #2196f3);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    transform: scale(1.03);
+}
+
+footer {
+    color: #aee7ff;
+    font-size: 0.95rem;
+    text-shadow: 0 0 5px rgba(255,255,255,0.2);
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+
+    .foto img {
+        width: 120px;
+        height: 120px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .identitas, .biodata, .hobi, .kontak {
+        padding: 15px;
+    }
+
+    button {
+        font-size: 0.95rem;
+    }
 }
